@@ -8,4 +8,10 @@
         android:title="Add"
         myapp:showAsAction="always" />
 
+    <item
+        android:id="@+id/menu_display"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        android:title="Add"
+        myapp:showAsAction="always" />
+
 </menu>

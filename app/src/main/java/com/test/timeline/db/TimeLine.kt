@@ -1,14 +1,19 @@
 package com.test.timeline.db
 
 import android.arch.persistence.room.ColumnInfo
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 
-data class TimeLine(
-        @PrimaryKey var date: String,
-        @ColumnInfo(name = "lat") var lat: String?,
-        @ColumnInfo(name = "long") var long: String?,
-        @ColumnInfo(name = "name") var name: String?,
-        @ColumnInfo(name = "startTime") var startTime: String?,
-        @ColumnInfo(name = "endTime") var endTime: String?
-
+@Entity(tableName = "timeline")
+data class TimeLine(@PrimaryKey var dateString: String = "",
+                       var name: String = "",
+                       var lat: Double = 0.0,
+                       var lon: Double = 0.0,
+                       var startTime: String = "",
+                       var endTime: String = ""
 )
+{
+    @Ignore
+    constructor():this("","",0.0,0.0,"","")
+}
